@@ -1,0 +1,27 @@
+# This file is used by Codemagic to configure the build process.
+# For more information, see: https://docs.codemagic.io/yaml/yaml-getting-started/
+
+workflows:
+  ios-build:
+    name: iOS Build
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          cd pharmacy_expiry_scanner
+          flutter pub get
+      - name: Analyze project source
+        script: |
+          cd pharmacy_expiry_scanner
+          flutter analyze
+      - name: Build iOS App
+        script: |
+          cd pharmacy_expiry_scanner
+          flutter build ios --release --no-codesign
+    artifacts:
+      - pharmacy_expiry_scanner/build/ios/ipa/*.ipa
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
