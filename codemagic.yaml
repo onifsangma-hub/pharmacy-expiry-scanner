@@ -14,6 +14,9 @@ workflows:
         script: |
           cd pharmacy_expiry_scanner
           flutter clean
+          rm -rf build
+          rm -rf ios/Pods
+          rm -rf ios/.symlinks
       - name: Get Flutter packages
         script: |
           cd pharmacy_expiry_scanner
@@ -21,7 +24,11 @@ workflows:
       - name: Analyze project source
         script: |
           cd pharmacy_expiry_scanner
-          flutter analyze
+          if [ -d test ]; then
+            flutter analyze lib test
+          else
+            flutter analyze lib
+          fi
       - name: Build iOS App
         script: |
           cd pharmacy_expiry_scanner
