@@ -1,0 +1,37 @@
+{
+    "name": "Pharmacy Expiry Scanner",
+    "short_name": "Rx Scanner",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0D7377",
+    "theme_color": "#0D7377",
+    "description": "Scan medicine barcodes, track batches and expiry dates for your pharmacy.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [],
+    "categories": ["health", "productivity", "utilities"]
+}
