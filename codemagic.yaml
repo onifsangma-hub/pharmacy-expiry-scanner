@@ -10,6 +10,10 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
+      - name: Clean Flutter project
+        script: |
+          cd pharmacy_expiry_scanner
+          flutter clean
       - name: Get Flutter packages
         script: |
           cd pharmacy_expiry_scanner
